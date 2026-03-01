@@ -1,0 +1,115 @@
+body {
+    color: aliceblue;
+}
+
+.autorization-box {
+    width: 40vh;
+    
+    background: linear-gradient(to bottom right, rgba(23, 23, 96, 0.964), rgba(4, 11, 53, 0.898));
+    border-radius: 20px;
+    border-color: aliceblue;
+    border: 2px solid rgba(255, 255, 255, 0.134);
+    margin-top: 10%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.autorization-box-logo {
+    
+    width: 5vh;
+    height: 5vh;
+    background-color: aliceblue;
+    margin: 0 auto;
+    margin-top: 2vh;
+
+}
+
+
+.autorization-box-title {
+    color: aliceblue;
+    font-weight: 700;
+    width: 100%;
+    font-size: 4vh;
+}
+
+.autorization-box-prompting {
+    color: aliceblue;
+    font-size: 2vh;
+}
+
+.autorization-box-inputplace {
+    color: aliceblue;
+}
+
+.autorization-box-inputplace-input {
+    width: 30vh;
+    height: 2vh;
+    background-color: rgb(0, 6, 49);
+    border-radius: 10px;
+    border-color: aliceblue;
+    border: 1px solid rgba(208, 208, 208, 0.255);
+    transition: all 0.2s ease;
+    color: aliceblue;
+    padding: 1vh;
+    font-size: 2vh;
+}
+
+
+.autorization-box-inputplace-input:hover{
+transform: scale(1.05);
+}
+
+
+.autorization-box-inputplace-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(152, 152, 152, 0.364);
+    transition: 0.2s;
+}
+
+.autorization-box-button-login {
+    margin: 2vh auto 0 auto;
+    width: 35vh;
+    height: 4vh;
+    align-items: center;
+    color: aliceblue;
+    font-size: 2.5vh;
+    font-weight: 500;
+    background-color: rgb(53, 53, 230);
+    border-radius: 10px;
+    border-color: aliceblue;
+    border: 1px solid rgba(208, 208, 208, 0.255);
+    transition: all 0.2s ease;
+}
+
+.autorization-box-button-login:hover {
+    background-color: rgb(84, 84, 252);
+    transform: scale(1.05);
+}
+
+.autorization-box-agreement {
+    color: aliceblue;
+}
+
+
+.autorization-box-create-account {
+    color: aliceblue;
+    font-size: 2vh;
+    
+}
+
+.autorization-box-create-account-button {
+    margin: 1vh;
+    background: none;
+    border:  none;
+    font-size: 2vh;
+    color: rgb(249, 249, 249);
+    transition: all 0.2s ease;
+}
+
+.autorization-box-create-account-button:hover {
+    transform: scale(1.05);
+}
+
+
+/*ошибки*/

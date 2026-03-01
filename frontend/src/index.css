@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(7, 12, 58);
+  margin: 0;
+  
+}
+
+/* А это добавь если нужно центрировать авторизацию */
+.autorization-box {
+   margin: 0 auto;
+   margin-top: 5%;
+}

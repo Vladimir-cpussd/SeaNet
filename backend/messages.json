@@ -1,0 +1,202 @@
+[
+  {
+    "id": "msg1",
+    "fromUserId": "user1",
+    "fromUserName": "Анна",
+    "toUserId": "user2", 
+    "toUserName": "Михаил",
+    "text": "Привет! Как дела?",
+    "date": "2025-02-27T09:15:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg2",
+    "fromUserId": "user2",
+    "fromUserName": "Михаил",
+    "toUserId": "user1",
+    "toUserName": "Анна", 
+    "text": "Привет! Нормально, работаю. А ты как?",
+    "date": "2025-02-27T09:20:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg3",
+    "fromUserId": "user1",
+    "fromUserName": "Анна",
+    "toUserId": "user2",
+    "toUserName": "Михаил",
+    "text": "Тоже всё отлично! Погода хорошая)",
+    "date": "2025-02-27T09:25:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg4",
+    "fromUserId": "user3",
+    "fromUserName": "Елена",
+    "toUserId": "user4",
+    "toUserName": "Дмитрий",
+    "text": "Дима, ты завтра на встречу придешь?",
+    "date": "2025-02-27T10:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg5",
+    "fromUserId": "user4",
+    "fromUserName": "Дмитрий",
+    "toUserId": "user3",
+    "toUserName": "Елена",
+    "text": "Да, конечно! Во сколько начало?",
+    "date": "2025-02-27T10:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg6",
+    "fromUserId": "user5",
+    "fromUserName": "Сергей",
+    "toUserId": "user6",
+    "toUserName": "Ольга",
+    "text": "Оля, привет! Не хочешь сходить в кино сегодня?",
+    "date": "2025-02-27T11:30:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg7",
+    "fromUserId": "user6",
+    "fromUserName": "Ольга",
+    "toUserId": "user5",
+    "toUserName": "Сергей",
+    "text": "Привет! А что идет?",
+    "date": "2025-02-27T11:35:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg8",
+    "fromUserId": "user7",
+    "fromUserName": "Игорь",
+    "toUserId": "user8",
+    "toUserName": "Татьяна",
+    "text": "Тань, ты уже сделала отчет?",
+    "date": "2025-02-27T12:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg9",
+    "fromUserId": "user8",
+    "fromUserName": "Татьяна",
+    "toUserId": "user7",
+    "toUserName": "Игорь",
+    "text": "Почти закончила, к вечеру скину",
+    "date": "2025-02-27T12:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg10",
+    "fromUserId": "user9",
+    "fromUserName": "Алексей",
+    "toUserId": "user10",
+    "toUserName": "Наталья",
+    "text": "Наташ, поздравляю с днем рождения!",
+    "date": "2025-02-27T13:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg11",
+    "fromUserId": "user10",
+    "fromUserName": "Наталья",
+    "toUserId": "user9",
+    "toUserName": "Алексей",
+    "text": "Спасибо большое!",
+    "date": "2025-02-27T13:10:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg12",
+    "fromUserId": "user11",
+    "fromUserName": "Павел",
+    "toUserId": "user12",
+    "toUserName": "Виктория",
+    "text": "Вика, ты будешь на вечеринке в субботу?",
+    "date": "2025-02-27T14:20:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg13",
+    "fromUserId": "user13",
+    "fromUserName": "Роман",
+    "toUserId": "user14",
+    "toUserName": "Алина",
+    "text": "Алина, привет! Как твой проект движется?",
+    "date": "2025-02-27T15:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg14",
+    "fromUserId": "user14",
+    "fromUserName": "Алина",
+    "toUserId": "user13",
+    "toUserName": "Роман",
+    "text": "Рома, привет! Почти готово, завтра сдаю",
+    "date": "2025-02-27T15:10:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg15",
+    "fromUserId": "user15",
+    "fromUserName": "Никита",
+    "toUserId": "user16",
+    "toUserName": "Ксения",
+    "text": "Ксюш, посмотри мой новый пост в блоге)",
+    "date": "2025-02-27T16:00:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg16",
+    "fromUserId": "user17",
+    "fromUserName": "Артем",
+    "toUserId": "user18",
+    "toUserName": "Юлия",
+    "text": "Юль, спасибо за помощь сегодня!",
+    "date": "2025-02-27T17:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg17",
+    "fromUserId": "user18",
+    "fromUserName": "Юлия",
+    "toUserId": "user17",
+    "toUserName": "Артем",
+    "text": "Не за что, обращайся)",
+    "date": "2025-02-27T17:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg18",
+    "fromUserId": "user19",
+    "fromUserName": "Максим",
+    "toUserId": "user20",
+    "toUserName": "Дарья",
+    "text": "Дарья, вы пришлете документы сегодня?",
+    "date": "2025-02-27T18:00:00.000Z",
+    "read": false
+  },
+  {
+    "id": "msg19",
+    "fromUserId": "user1",
+    "fromUserName": "Анна",
+    "toUserId": "user3",
+    "toUserName": "Елена",
+    "text": "Лена, привет! Как отдых съездила?",
+    "date": "2025-02-27T19:00:00.000Z",
+    "read": true
+  },
+  {
+    "id": "msg20",
+    "fromUserId": "user3",
+    "fromUserName": "Елена",
+    "toUserId": "user1",
+    "toUserName": "Анна",
+    "text": "Аня, привет! Отлично съездила, море фото привезла",
+    "date": "2025-02-27T19:10:00.000Z",
+    "read": false
+  }
+]

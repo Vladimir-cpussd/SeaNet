@@ -1,0 +1,1024 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/2dv8cshvdod51.jpg);
+    background-attachment: fixed;   
+    background-position: center;    
+    background-repeat: no-repeat;   
+    background-size: cover;  
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(4, 0, 36);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-navigation-bar {
+    display: flex;
+    position: fixed;
+    right: 2vh;
+    background-color: #2c3e50;
+    border-radius: 15px;
+    padding: 1vh;
+    align-items: center;
+    height: 4vh;
+}
+
+.onlogout-button {
+    background-color: #da190b;
+    width: 7vh;
+    height: 4vh;
+    padding: 1vh;
+    margin-left: 1vh;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5vh;
+    font-weight: 700;
+}
+
+.onlogout-button:hover {
+    transform: scale(1.05);
+}
+
+.header-logo { 
+    font-size: 3vh;
+    color: aliceblue;
+    font-weight: 700;
+    margin-left: 4vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Контейнер для контента */
+.content-wrapper {
+    display: flex;
+    padding-top: 10vh; /* отступ под фиксированную шапку */
+    min-height: 100vh;
+}
+
+.navigation {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15vh; /* начинается сразу под шапкой */
+    left: 0px;
+    width: 20vh;
+    height: 30vh;
+    background-color: rgb(0, 0, 155);
+    border-radius: 0px 15px 15px 0px;
+    border: 1px solid rgba(233, 233, 233, 0.427);
+    z-index: 900;
+}
+
+.navigation-button {
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 2vh;
+    margin: 1vh;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.navigation-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/2dv8cshvdod51.jpg);
+    background-attachment: fixed;   
+    background-position: center;    
+    background-repeat: no-repeat;   
+    background-size: cover;  
+    position: relative;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(4, 0, 36);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-logo { 
+    font-size: 3vh;
+    color: aliceblue;
+    font-weight: 700;
+    margin-left: 4vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Контейнер для контента */
+.content-wrapper {
+    display: flex;
+    padding-top: 10vh; 
+    min-height: 100vh;
+}
+
+.navigation {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15vh; 
+    left: 0px;
+    width: 20vh;
+    height: 30vh;
+    background-color: rgba(0, 0, 155, 0.658);
+    border-radius: 0px 15px 15px 0px;
+    border: 1px solid rgba(233, 233, 233, 0.427);
+    z-index: 900;
+}
+
+
+
+
+.navigation-button {
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 2vh;
+    margin: 1vh;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.navigation-button:hover {
+    transform: scale(1.05);
+}
+
+.tape-wrapper {
+    flex: 1;                      
+    display: flex;                
+    justify-content: center;      
+    align-items: flex-start;      
+    padding: 4vh;
+    background-color: rgba(26, 26, 26, 0.271);
+                
+}
+
+.main-tape {
+    width: 100%;                  
+    max-width: 70%;
+    min-width: 300px;             
+    height: auto;
+    background-color: rgba(4, 4, 4, 0.252);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 2vh;
+    border-radius: 15px;
+}
+
+/* Профиль */
+.profile-section {
+    padding: 2vh;
+    color: white;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 3vh;
+    margin-bottom: 3vh;
+    padding: 2vh;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+}
+
+.profile-avatar {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background: #4a90e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    color: white;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+
+.profile-email {
+    color: rgba(255,255,255,0.7);
+    font-size: 2vh;
+}
+
+.profile-details {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.profile-item {
+    padding: 1.5vh;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    width: 15vh;
+    color: rgba(255,255,255,0.7);
+}
+
+.profile-value {
+    flex: 1;
+}
+
+.profile-edit-button {
+    width: 100%;
+    padding: 1.5vh;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2vh;
+    cursor: pointer;
+    margin-top: 2vh;
+}
+
+.profile-edit-button:hover {
+    background: #357abd;
+}
+
+/* Форма редактирования */
+.profile-edit-form {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2vh;
+    margin-bottom: 2vh;
+}
+
+.form-group {
+    margin-bottom: 2vh;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5vh;
+    color: rgba(255,255,255,0.8);
+    font-size: 2vh;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 1.5vh;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 2vh;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1vh;
+    margin-top: 2vh;
+}
+
+.save-button, .cancel-button {
+    flex: 1;
+    padding: 1.5vh;
+    border: none;
+    border-radius: 8px;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+.save-button {
+    background: #4caf50;
+    color: white;
+}
+
+.save-button:hover {
+    background: #45a049;
+}
+
+.cancel-button {
+    background: #f44336;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #da190b;
+}
+
+/* Посты пользователя */
+.user-posts {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2vh;
+}
+
+.user-posts h3 {
+    margin-bottom: 2vh;
+    font-size: 3vh;
+}
+
+
+
+/* Кнопка показа резюме */
+.resume-toggle-button {
+    width: 100%;
+    padding: 1.5vh;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2vh;
+    cursor: pointer;
+    margin: 1vh 0 2vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    transition: 0.3s;
+}
+
+.resume-toggle-button:hover {
+    background: #34495e;
+    transform: scale(1.02);
+}
+
+.profile-response {
+    background-color: #34495e;
+    border: 1px solid #34495e;
+    border-radius: 1vh;
+    color: #e9e9e9;
+    padding: 1vh;
+    margin: 1vh;
+}
+
+.profile-response:hover {
+    background-color: #2c3e50;
+    background: #34495e;
+    transform: scale(1.02);
+}
+/* Секция резюме */
+.resume-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2vh;
+    margin-top: 2vh;
+    border: 2px solid #c3c3c3;
+}
+
+.resume-title {
+    color: #f0f0f0;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.resume-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.resume-item {
+    padding: 1vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-label {
+    color: #e9e9e9;
+    font-size: 2vh;
+    font-weight: bold;
+    margin-bottom: 0.5vh;
+}
+
+.resume-value {
+    color: white;
+    font-size: 2vh;
+    line-height: 1.5;
+    padding-left: 1vh;
+}
+
+
+.resume-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.post {
+    
+    height: auto;
+    min-width: 60vh;
+    max-height: 700px;
+    background-color: rgb(33, 33, 33);
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.post-image {
+    margin-left: 5%;
+    width: 90%;
+    max-height: 50vh;
+    border-radius: 10px;
+    margin-top: 10px;
+    object-fit: cover;
+    background-color: aliceblue;
+}
+
+.post-header {
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    width: auto;
+
+}
+
+
+
+
+.post-time {
+    font-size: 1.5vh;
+    margin-left: auto;
+    max-width: 20vh ;
+}
+
+
+
+
+
+
+
+
+/*сообщения*/
+
+.messages-section {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;   
+}
+
+.message-title {
+    color: white;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 1vh;
+}
+
+.chats-list {
+    padding: 2vh;
+    
+}
+
+.chats-list h3 {
+    color: white;
+    margin-bottom: 2vh;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5vh;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.chat-avatar {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: #4a90e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5vh;
+    margin-right: 1.5vh;
+}
+
+.chat-info {
+    flex: 1;
+}
+
+.chat-name {
+    color: white;
+    font-size: 2vh;
+    font-weight: 600;
+}
+
+.chat-last-message {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.6vh;
+}
+
+.unread-badge {
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 50%;
+    width: 2.5vh;
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vh;
+}
+
+.chat-window {
+    min-height: 50vh;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+    padding: 2vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #4a90e2;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+.chat-header h3 {
+    color: white;
+    margin: 0;
+}
+
+.messages-list {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 70%;
+    padding: 1vh 1.5vh;
+    border-radius: 15px;
+}
+
+.my-message {
+    align-self: flex-end;
+    background-color: #4a90e2;
+    color: white;
+}
+
+.their-message {
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.message-time {
+    font-size: 1.2vh;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5vh;
+    text-align: right;
+}
+
+.no-content {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 5vh;
+    font-size: 2.5vh;
+}
+
+.navigation-button.active {
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 15px;
+}
+
+
+.find-Chat {
+    
+    width: 30vh;
+    height: 1.5vh;
+    background-color: rgb(0, 20, 34);
+    border: 1px solid white;
+    border-radius: 15px;
+    color: aliceblue;
+    padding: 1vh;
+    margin: 1vh;
+}
+
+
+/* Стили для вакансий */
+.jobs-section {
+    width: 100%;
+    padding: 2vh;
+}
+
+.jobs-title {
+    color: white;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 1vh;
+}
+
+.jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.job-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2vh;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.job-title {
+    color: white;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.job-salary {
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 2vh;
+}
+
+.job-company {
+    color: #4a90e2;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+}
+
+.job-location {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.8vh;
+    margin-bottom: 1.5vh;
+}
+
+.job-description {
+    color: white;
+    font-size: 2vh;
+    line-height: 1.5;
+    margin-bottom: 1.5vh;
+}
+
+.job-requirements {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.8vh;
+    margin-bottom: 2vh;
+    padding: 1.5vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.6vh;
+}
+
+.job-apply {
+    padding: 1vh 2vh;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.job-apply:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+
+/* Группы */
+.groups-section {
+    width: 100%;
+    padding: 2vh;
+}
+
+.groups-title {
+    color: white;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 1vh;
+}
+
+.groups-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.group-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.group-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.group-image {
+    width: 30vh;
+    min-width: 20vh;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.group-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.group-content {
+    flex: 1;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.group-name {
+    color: #4a90e2;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.group-type {
+    background: rgba(74, 144, 226, 0.3);
+    color: white;
+    padding: 0.5vh 1.5vh;
+    border-radius: 15px;
+    font-size: 1.6vh;
+}
+
+.group-description {
+    color: white;
+    font-size: 2vh;
+    line-height: 1.5;
+    margin: 1vh 0;
+}
+
+.group-footer {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.8vh;
+    margin: 1vh 0;
+}
+
+.group-join-button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1.5vh;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1vh;
+    width: 30vh;
+}
+
+.group-join-button:hover {
+    background: #357abd;
+    transform: scale(1.02);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .group-card {
+        flex-direction: column;
+    }
+    
+    .group-image {
+        width: 30%;
+        height: 25vh;
+    }
+    
+    .group-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vh;
+    }
+}
+
+/* Руководства */
+.manuals-section {
+    width: 100%;
+    padding: 2vh;
+}
+
+.manuals-title {
+    color: white;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    text-align: center;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 1vh;
+}
+
+.manuals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.manual-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.manual-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.manual-image {
+    width: 45vh;
+    min-width: 30vh;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.manual-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.manual-content {
+    flex: 1;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.manual-name {
+    color: #4a90e2;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.manual-type {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.8vh;
+    margin: 0;
+}
+
+.manual-description {
+    color: white;
+    font-size: 2vh;
+    line-height: 1.5;
+    margin: 1vh 0;
+}
+
+.manual-link {
+    display: inline-block;
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 2vh;
+    padding: 1vh 2vh;
+    background: rgba(74, 144, 226, 0.2);
+    border-radius: 8px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.manual-link:hover {
+    background: #4a90e2;
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .manual-card {
+        flex-direction: column;
+    }
+    
+    .manual-image {
+        width: 100%;
+        height: 25vh;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(4, 0, 36);
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    
+}
+
+.copyright-policy-contacts {
+    margin-left: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.telegram-icon {
+    width: 3vh;
+    height: 3vh;
+}

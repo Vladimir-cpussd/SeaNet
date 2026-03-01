@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1740578000001",
+    "name": "Анна Петрова",
+    "email": "anna@mail.com",
+    "password": "123456",
+    "avatar": "",
+    "bio": "Люблю путешествия",
+    "createdAt": "2025-02-25T10:00:00.000Z"
+  },
+  {
+    "id": "1740578000002",
+    "name": "Иван Сидоров",
+    "email": "ivan@mail.com",
+    "password": "123456",
+    "avatar": "",
+    "bio": "Разработчик",
+    "createdAt": "2025-02-25T11:00:00.000Z"
+  },
+  {
+    "id": "1740578000003",
+    "name": "Мария Иванова",
+    "email": "maria@mail.com",
+    "password": "123456",
+    "avatar": "",
+    "bio": "Фотограф",
+    "createdAt": "2025-02-25T12:00:00.000Z"
+  },
+  {
+    "id": "1772311969104",
+    "name": "Ибрагим",
+    "email": "ibragim@gmail.com",
+    "password": "1234567",
+    "avatar": "",
+    "bio": "",
+    "createdAt": "2026-02-28T20:52:49.104Z"
+  },
+  {
+    "id": "1772368639436",
+    "name": "Михаил",
+    "email": "mihail@gmail.com",
+    "password": "1234567",
+    "avatar": "",
+    "bio": "",
+    "createdAt": "2026-03-01T12:37:19.436Z"
+  }
+]
