@@ -113,16 +113,18 @@ app.get('/api/posts', async (req, res) => {
 });
 
 app.post('/api/posts', async (req, res) => {
-    const { userId, text, image } = req.body;
+    const { userId, userName, text, image } = req.body;
     
-    if (!userId || !text) {
-        return res.status(400).json({ error: 'userId и text обязательны' });
-    }
+    if (!userId || !userName || !text) {
+            console.log('Missing fields:', { userId, userName, text });
+            return res.status(400).json({ error: 'userId, userName и text обязательны' });
+        }
     
     const posts = await readJSON(POSTS_FILE);
     const newPost = {
         id: Date.now().toString(),
         userId,
+        userName,
         text,
         image: image || '',
         date: new Date().toISOString(),
