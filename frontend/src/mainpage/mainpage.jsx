@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; 
 import './mainpage.css';
-
-import Telegram from '../images/Telegram.png'
+import Telegram from '../images/Telegram.png';
+import licencePDF from './licence.pdf'; 
 
 function Mainpage({ onLogout, currentUser }) { 
     
@@ -17,6 +17,7 @@ function Mainpage({ onLogout, currentUser }) {
     const [showGroups, setShowGroups] = useState(false);
     const [manuals, setManuals] = useState([]);
     const [showManuals, setShowManuals] = useState(false);
+    const [newPostText, setNewPostText] = useState('');
     
     // Данные для моей страницы
     const [userProfile, setUserProfile] = useState({
@@ -161,6 +162,60 @@ function Mainpage({ onLogout, currentUser }) {
             (msg.fromUserId === selectedChat.userId && msg.toUserId === currentUser?.id)
         ).sort((a, b) => new Date(a.date) - new Date(b.date));
     };
+
+
+
+    // лайки 
+    const handleLike = async (postId) => {
+        try {
+            const res = await fetch(`http://localhost:3001/api/posts/${postId}/like`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: currentUser?.id }) 
+            });
+
+            if (res.ok) {
+                
+                fetchPosts(); 
+                
+            }
+        } catch (error) {
+            console.error('Ошибка лайка:', error);
+        }
+    };
+
+    const isLiked = (post) => {
+        return post.likes?.includes(currentUser?.id);
+    };
+
+    //создание поста
+    const createPost = async () => {
+    if (!newPostText.trim()) {
+        alert('Введите текст поста');
+        return;
+    }
+
+    try {
+        const res = await fetch('http://localhost:3001/api/posts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userId: currentUser?.id,
+                userName: currentUser?.name,
+                text: newPostText,
+                image: ''
+            })
+        });
+
+        if (res.ok) {
+            setNewPostText('');
+            fetchPosts(); 
+        }
+    } catch (error) {
+        console.error('Ошибка создания поста:', error);
+    }
+};
+
 
     const handleMyPageClick = () => {
         setShowMyPage(true);
@@ -564,11 +619,27 @@ function Mainpage({ onLogout, currentUser }) {
                                         </div>
                                     </div>
                                 )}
+                                 {/* ФОРМА СОЗДАНИЯ ПОСТА */}
+                                <div className='create-post-form'>
+                                    <textarea
+                                        className='post-textarea'
+                                        placeholder='Что у вас нового?'
+                                        value={newPostText}
+                                        onChange={(e) => setNewPostText(e.target.value)}
+                                        rows='3'
+                                    />
+                                    <button 
+                                        className='create-post-button'
+                                        onClick={createPost}
+                                    >
+                                        Опубликовать
+                                    </button>
+                                </div>
 
                                 {/* ПОСТЫ ПОЛЬЗОВАТЕЛЯ */}
                                 <div className='user-posts'>
                                     <h3>Мои посты</h3>
-                                    {posts.filter(post => post.userName === userProfile.name).map(post => (
+                                    {posts.filter(post => post.userId === currentUser?.id).map(post => (
                                         <div key={post.id} className='post'>
                                             <div className='post-header'>
                                                 <strong className='post-header-username'>{post.userName}</strong>
@@ -615,7 +686,12 @@ function Mainpage({ onLogout, currentUser }) {
                                     )}
                                 </div>
                                 <div className='post-footer'>
-                                    ❤️ {post.likes?.length || 0}
+                                    <button 
+                                        className={`like-button ${isLiked(post) ? 'liked' : ''}`}
+                                        onClick={() => handleLike(post.id)}
+                                    >
+                                        ❤️ {post.likes?.length || 0}
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -781,7 +857,14 @@ function Mainpage({ onLogout, currentUser }) {
             </div>
             <div className='footer'>
                 <div className='copyright-policy-contacts'>
-                    <a>Пользовательское соглашение</a>
+                    <a 
+                        href={licencePDF} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                    >
+                        Пользовательское соглашение
+                    </a>
                     <a>Контактная информация</a>
                     <a>@Copyright</a>
                     <img src={Telegram} alt="Telegram" className='telegram-icon' href="https://github.com/"/>

@@ -351,7 +351,47 @@
     margin-bottom: 2vh;
     font-size: 3vh;
 }
+.create-post-form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2vh;
+    margin-bottom: 2vh;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.post-textarea {
+    width: 80%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+    padding: 1.5vh;
+    font-size: 2vh;
+    resize: vertical;
+    margin-bottom: 1.5vh;
+}
+
+.post-textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.create-post-button {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1.5vh 3vh;
+    font-size: 2vh;
+    cursor: pointer;
+    float: right;
+    transition: 0.3s;
+}
+
+.create-post-button:hover {
+    background: #357abd;
+    transform: scale(1.02);
+}
 
 
 /* Кнопка показа резюме */
@@ -483,8 +523,32 @@
 }
 
 
+/*кнопки лайков*/
+.like-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2vh;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5vh;
+    padding: 0.5vh 1vh;
+    border-radius: 5px;
+    transition: 0.2s;
+}
 
+.like-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
+.like-button.liked {
+    color: #ff4d4d;  /* красный когда лайкнуто */
+}
+
+.like-button.liked:hover {
+    color: #ff6666;
+}
 
 
 
@@ -1011,6 +1075,10 @@
     
 }
 
+.footer-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
 .copyright-policy-contacts {
     margin-left: 5vh;
     display: flex;
