@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useRef, useEffect } from 'react';
 import './mainpage.css';
 import Telegram from '../images/Telegram.png';
 import licencePDF from './licence.pdf'; 
@@ -18,7 +18,18 @@ function Mainpage({ onLogout, currentUser }) {
     const [manuals, setManuals] = useState([]);
     const [showManuals, setShowManuals] = useState(false);
     const [newPostText, setNewPostText] = useState('');
+    // Блокировка прокрутки когда открыт чат
+useEffect(() => {
+    if (selectedChat && showMessages) {
+        document.body.classList.add('stop-scroll');
+    } else {
+        document.body.classList.remove('stop-scroll');
+    }
     
+    return () => {
+        document.body.classList.remove('stop-scroll');
+    };
+}, [selectedChat, showMessages]);
     // Данные для моей страницы
     const [userProfile, setUserProfile] = useState({
         name: currentUser?.name || 'Пользователь',
@@ -155,15 +166,50 @@ function Mainpage({ onLogout, currentUser }) {
         return chats;
     };
 
-    const getChatMessages = () => {
-        if (!selectedChat) return [];
-        return messages.filter(msg => 
-            (msg.fromUserId === currentUser?.id && msg.toUserId === selectedChat.userId) ||
-            (msg.fromUserId === selectedChat.userId && msg.toUserId === currentUser?.id)
-        ).sort((a, b) => new Date(a.date) - new Date(b.date));
+
+
+// Состояния
+const [newMessageText, setNewMessageText] = useState('');
+const messagesEndRef = useRef(null);
+
+// Функция отправки сообщения
+const sendMessage = () => {
+    if (!newMessageText.trim() || !selectedChat || !currentUser) return;
+    
+    const newMessage = {
+        id: Date.now(),
+        text: newMessageText,
+        fromUserId: currentUser.id,
+        toUserId: selectedChat.userId,
+        date: new Date().toISOString()
     };
+    
+    // Добавляем сообщение в ваш массив сообщений
+    setMessages(prev => [...prev, newMessage]);
+    
+    // Очищаем поле ввода
+    setNewMessageText('');
+    
+    // Автоматическая прокрутка к новому сообщению
+    setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+};
 
+// Автопрокрутка при загрузке диалога и новых сообщениях
+useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+}, [selectedChat, messages]);
 
+// Функция получения сообщений для текущего чата
+const getChatMessages = () => {
+    if (!selectedChat || !currentUser) return [];
+    
+    return messages.filter(msg => 
+        (msg.fromUserId === currentUser.id && msg.toUserId === selectedChat.userId) ||
+        (msg.fromUserId === selectedChat.userId && msg.toUserId === currentUser.id)
+    ).sort((a, b) => new Date(a.date) - new Date(b.date));
+};
 
     // лайки 
     const handleLike = async (postId) => {
@@ -695,93 +741,84 @@ function Mainpage({ onLogout, currentUser }) {
                                 </div>
                             </div>
                         ))}
-
                         {/* СООБЩЕНИЯ */}
-                        {showMessages && (
-                            <div className='messages-section'>
-                                {!selectedChat ? (
-                                    <div className='chats-list'>
-                                        <h3 className='message-title'>Диалоги</h3>
-                                        <input placeholder='Найти' className='find-Chat' />
-                                        {getChats().map(chat => (
-                                            <div 
-                                                key={chat.userId}
-                                                className='chat-item'
-                                                onClick={() => setSelectedChat(chat)}
-                                            >
-                                                <div className='chat-avatar'>
-                                                    {chat.userName[0]}
-                                                </div>
-                                                <div className='chat-info'>
-                                                    <div className='chat-name'>{chat.userName}</div>
-                                                    <div className='chat-last-message'>{chat.lastMessage}</div>
-                                                </div>
-                                                {chat.unread && <div className='unread-badge'>1</div>}
-                                            </div>
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className='chat-window'>
-                                        <div className='chat-header'>
-                                            <button 
-                                                className='back-button'
-                                                onClick={() => setSelectedChat(null)}
-                                            >
-                                                ← Назад
-                                            </button>
-                                            <h3>{selectedChat.userName}</h3>
-                                        </div>
-                                        
-                                        <div className='messages-list'>
-                                            {getChatMessages().map(msg => (
-                                                <div 
-                                                    key={msg.id}
-                                                    className={`message ${msg.fromUserId === currentUser?.id ? 'my-message' : 'their-message'}`}
-                                                >
-                                                    <div className='message-content'>{msg.text}</div>
-                                                    <div className='message-time'>
-                                                        {new Date(msg.date).toLocaleTimeString()}
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
+{showMessages && (
+    <div className='messages-section'>
+        {!selectedChat ? (
+            <div className='chats-list'>
+                <h3 className='message-title'>Диалоги</h3>
+                <input placeholder='Найти' className='find-Chat' />
+                {getChats().map(chat => (
+                    <div 
+                        key={chat.userId}
+                        className='chat-item'
+                        onClick={() => setSelectedChat(chat)}
+                    >
+                        <div className='chat-avatar'>
+                            {chat.userName[0]}
+                        </div>
+                        <div className='chat-info'>
+                            <div className='chat-name'>{chat.userName}</div>
+                            <div className='chat-last-message'>{chat.lastMessage}</div>
+                        </div>
+                        {chat.unread && <div className='unread-badge'>1</div>}
+                    </div>
+                ))}
+            </div>
+        ) : (
+            <div className='chat-window'>
+                <div className='chat-header'>
+                    <button 
+                        className='back-button'
+                        onClick={() => setSelectedChat(null)}
+                    >
+                        ← Назад
+                    </button>
+                    <h3>{selectedChat.userName}</h3>
+                </div>
+                
+                {/* ТОЛЬКО ОДИН messages-list - здесь! */}
+                <div className='messages-list'>
+                    {getChatMessages().map(msg => (
+                        <div 
+                            key={msg.id}
+                            className={`message ${msg.fromUserId === currentUser?.id ? 'my-message' : 'their-message'}`}
+                        >
+                            <div className='message-content'>{msg.text}</div>
+                            <div className='message-time'>
+                                {new Date(msg.date).toLocaleTimeString()}
                             </div>
-                        )}
+                        </div>
+                    ))}
+                    <div ref={messagesEndRef} />
+                </div>
 
-                        {/* ВАКАНСИИ */}
-                        {showJobs && (
-                            <div className='jobs-section'>
-                                <h2 className='jobs-title'>Вакансии</h2>
-                                <input placeholder='Найти' className='find-Chat' />
-                                <div className='jobs-list'>
-                                    {jobs.map(job => (
-                                        <div key={job.id} className='job-card'>
-                                            <div className='job-header'>
-                                                <h3 className='job-title'>{job.title}</h3>
-                                                <span className='job-salary'>{job.salary}</span>
-                                            </div>
-                                            <div className='job-company'>{job.company}</div>
-                                            <div className='job-location'>{job.location}</div>
-                                            <p className='job-description'>{job.description}</p>
-                                            <div className='job-requirements'>
-                                                <strong>Требования:</strong> {job.requirements}
-                                            </div>
-                                            <div className='job-footer'>
-                                                <span className='job-date'>{job.date}</span>
-                                                <button 
-                                                    className='job-apply'
-                                                    onClick={() => alert('Ваше резюме отправлено работодателю!')}
-                                                >
-                                                    Откликнуться
-                                                </button>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
+                {/* Строка ввода - должна быть ПОСЛЕ messages-list */}
+                <div className='message-input-container'>
+                    <input
+                        type='text'
+                        placeholder='Введите сообщение...'
+                        value={newMessageText}
+                        onChange={(e) => setNewMessageText(e.target.value)}
+                        onKeyPress={(e) => {
+                            if (e.key === 'Enter') {
+                                sendMessage();
+                            }
+                        }}
+                        className='message-input'
+                    />
+                    <button 
+                        onClick={sendMessage}
+                        className='send-button'
+                        disabled={!newMessageText.trim()}
+                    >
+                        Отправить
+                    </button>
+                </div>
+            </div>
+        )}
+    </div>
+)}
                         {/* ГРУППЫ */}
                         {showGroups && (
                             <div className='groups-section'>
